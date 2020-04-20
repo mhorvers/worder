@@ -36,7 +36,7 @@ impl<'a> Game<'a> {
             self.io
                 .request_any_key()
                 .and_then(|io| io.clear())
-                .and_then(|io| io.put_string(format!("Round {}!", round).as_str()))
+                .and_then(|io| io.put_string(format!("Round {}!", round + 1).as_str()))
                 .and_then(|io| io.request_any_key())?;
 
             let mut shuffled = self.words.clone();
